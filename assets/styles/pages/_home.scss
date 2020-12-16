@@ -1,3 +1,197 @@
 // -----------------------------------------------------------------------------
 // This file contains styles that are specific to the home page.
 // -----------------------------------------------------------------------------
+
+$phone: 375px;
+$tablet: 768px;
+$desktop-sm: 992px;
+$desktop-lg: 1200px;
+$large: 1.8rem;
+
+@mixin sm {
+   @media (min-width: #{$phone}) {
+       @content;
+   }
+}
+
+@mixin md {
+   @media (min-width: #{$tablet}) {
+       @content;
+   }
+}
+
+@mixin lg {
+   @media (min-width: #{$desktop-sm}) {
+       @content;
+   }
+}
+
+@mixin xl {
+   @media (min-width: #{$desktop-lg}) {
+       @content;
+   }
+}
+
+html, body {
+ 	scroll-behavior: smooth;
+	// font-family: 'Libre Caslon Text', serif;
+	font-family: Gothic A1;
+    font-weight: 300; 
+    font-size:15px; 
+    color: black;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+
+	&:hover {
+	    text-decoration: none;
+    	color: black;
+	}
+}
+
+p {
+	margin: 0;
+	padding: 0;
+	color: black;
+}
+
+ul {
+	list-style: none;
+    padding-inline-start: 0;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	font-size: $large;
+	padding: 10px;
+	flex-direction: column-reverse;
+
+	@include md {
+		padding:20px;
+		align-items: center;
+		position: fixed;
+		z-index:1;
+		top: 0;
+		width: 100%;
+		flex-direction: row;
+	}
+}
+
+.socials a {
+	margin-right: 10px;
+}
+
+.sidebar {
+	padding:10px 10px 15px 10px;
+
+	@include md {
+		padding: 0px 20px 20px 10px;
+	    position: fixed; 
+		width: 25%;
+		right:0;
+	    top: 20px;
+	}
+
+	&__description {
+	    @include md {
+	    	text-align:justify;
+	    }
+	}
+
+	&__title {
+	    font-size: $large;
+	    margin-bottom: 10px;
+
+		@include md {
+			text-align: right;
+		}
+	}
+}
+
+.wrapper {
+	@include md {
+		overflow-y:scroll; 
+		width: 75%;
+		padding:20px 0 0 20px;
+	}
+}
+
+.main {
+	@include md {
+		margin-top:36px;
+	}
+}
+
+.post {
+	&__container {
+		@include md {
+			display:flex;
+			margin-top:7px;
+		}
+	}
+
+	&__double-images__container {
+		@include md {
+			position:relative;
+		}
+	}
+
+	&__image {
+		object-fit: cover;
+		width: 100%;
+
+		@include md {
+			width: 80%;
+		}
+	}
+
+	&__title {
+		font-weight: bold;
+		padding-bottom: 5px; 
+	}
+
+	&__information {
+		padding: 10px;
+
+		@include md {
+			display: flex;
+			padding:0 0 0 13px;
+			width: 20%;
+			flex-direction:column;
+		}
+	}
+}
+
+.double-images {
+	position:relative;
+
+	@include md {	
+	    width: 80%;			
+	}
+}
+
+.arrow {
+	display:none;
+
+	@include md {
+		display:block;
+		position: absolute;
+	    width: 150px;
+	    height: 150px;
+	    z-index: 1;
+	    top: 35%;
+	    cursor:pointer;
+
+	    &--right {
+	    	right:-20px;
+	    }
+
+	     &--left {
+	    	left:-20px;
+	    }
+	}
+}
