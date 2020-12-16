@@ -64,3 +64,4 @@ sass --watch assets/styles/style.scss:style.css
    * **layout/** - This directory contains all styles of application layouts such as `_header.scss` , `_sidebar.scss` etc...
    * **pages/** - Page specific scss partials file will be here.
    * **themes/** - If your project has several theme , then these theme specified scss pertials will be here.
+# poppy-portfolio
